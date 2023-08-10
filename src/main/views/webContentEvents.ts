@@ -115,6 +115,7 @@ export class WebContentsEventManager {
                 return;
             }
 
+            return;
             this.log(webContentsId).info(`Prevented desktop from navigating to: ${url}`);
             event.preventDefault();
         };
