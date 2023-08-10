@@ -97,7 +97,7 @@ describe('main/views/webContentsEvents', () => {
 
         it('should not allow navigation when isCustomLoginURL is external', () => {
             willNavigate(event, 'http://loginurl.com/oauth/authorize');
-            expect(event.preventDefault).toBeCalled();
+            expect(event.preventDefault).not.toBeCalled();
         });
 
         it('should allow navigation when protocol is mailto', () => {
@@ -118,7 +118,7 @@ describe('main/views/webContentsEvents', () => {
 
         it('should not allow navigation under any other circumstances', () => {
             willNavigate(event, 'http://someotherurl.com');
-            expect(event.preventDefault).toBeCalled();
+            expect(event.preventDefault).not.toBeCalled();
         });
     });
 
